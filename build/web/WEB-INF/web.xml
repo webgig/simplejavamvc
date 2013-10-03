@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <listener>
+        <description>ServletContextListener</description>
+        <listener-class>ITC557Assignment2.ServletListener</listener-class>
+    </listener>
+    
+    <servlet>
+        <servlet-name>index</servlet-name>
+        <servlet-class>ITC557Assignment2.Dispatcher</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>user</servlet-name>
+        <servlet-class>ITC557Assignment2.Dispatcher</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>message</servlet-name>
+        <servlet-class>ITC557Assignment2.Dispatcher</servlet-class>
+    </servlet>
+   
+    <servlet-mapping>
+        <servlet-name>index</servlet-name>
+        <url-pattern>/index/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>user</servlet-name>
+        <url-pattern>/user/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>message</servlet-name>
+        <url-pattern>/message/*</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+  
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>jdbc:mysql://localhost/</param-value>
+    </context-param>
+    <context-param>
+        <param-name>database</param-name>
+        <param-value>itc557assignment2</param-value>
+    </context-param>
+    <context-param>
+        <param-name>user_name</param-name>
+        <param-value>root</param-value>
+    </context-param>
+    <context-param>
+        <param-name>password</param-name>
+        <param-value/>
+    </context-param>
+</web-app>
